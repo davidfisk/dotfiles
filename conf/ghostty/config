@@ -1,0 +1,25 @@
+background-opacity = 0.91
+# background-blur-radius = 3
+background = #000000
+
+mouse-hide-while-typing = true
+
+cursor-style = block
+cursor-style-blink = true
+
+# custom-shader = ./shaders/cursor_synesthaxia.glsl
+
+font-family = JetBrains Mono Nerd Font
+font-size = 24
+# font-thicken = true
+
+link-url = true
+
+macos-titlebar-style = hidden
+
+# shell-integration-features = no-cursor
+
+theme = CGA
+
+window-padding-balance = true
+window-theme = dark
