@@ -24,6 +24,9 @@ deploy_tmux() {
     TMUX_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/tmux"
     mkdir -p $TMUX_DEPLOY_DIR &> /dev/null
     ln -s "$TMUX_SRC_DIR/tmux.conf" "$TMUX_DEPLOY_DIR/tmux.conf"
+    # install tpm
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    echo Tmux Plugin Manager Installed. Install plugins with `CTRL+A` the next time tmux is launched. 
 }
 
 deploy_ghostty() {
