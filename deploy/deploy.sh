@@ -49,7 +49,7 @@ deploy_nvim() {
 
 # determine os and set config directory accordingly
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    CONFIG_DEPLOY_DIR=""
+    CONFIG_DEPLOY_DIR="/Home/$USER/.config"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo deploying for mac os!
     CONFIG_DEPLOY_DIR="/Users/$USER/.config"
