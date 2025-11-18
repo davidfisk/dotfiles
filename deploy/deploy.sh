@@ -15,6 +15,7 @@ USER=$(id -un)
 deploy_aerospace() {
     AEROSPACE_SRC_DIR="$(cd .. && pwd)/conf/aerospace"
     AEROSPACE_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/aerospace"
+    rm -rf $AEROSPACE_DEPLOY_DIR
     mkdir -p $AEROSPACE_DEPLOY_DIR &> /dev/null
     ln -s "$AEROSPACE_SRC_DIR/aerospace.toml" "$AEROSPACE_DEPLOY_DIR/aerospace.toml"
 }
@@ -22,6 +23,7 @@ deploy_aerospace() {
 deploy_tmux() {
     TMUX_SRC_DIR="$(cd .. && pwd)/conf/tmux"
     TMUX_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/tmux"
+    rm -rf $TMUX_DEPLOY_DIR
     mkdir -p $TMUX_DEPLOY_DIR &> /dev/null
     ln -s "$TMUX_SRC_DIR/tmux.conf" "$TMUX_DEPLOY_DIR/tmux.conf"
     # install tpm
@@ -32,6 +34,7 @@ deploy_tmux() {
 deploy_ghostty() {
     GHOSTTY_SRC_DIR="$(cd .. && pwd)/conf/ghostty"
     GHOSTTY_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/ghostty"
+    rm -rf $GHOSTTY_DEPLOY_DIR
     mkdir -p $GHOSTTY_DEPLOY_DIR &> /dev/null
     ln -s "$GHOSTTY_SRC_DIR/config" "$GHOSTTY_DEPLOY_DIR/config"
     ln -s "$GHOSTTY_SRC_DIR/shaders" "$GHOSTTY_DEPLOY_DIR/shaders"
@@ -42,6 +45,7 @@ deploy_nvim() {
     echo nvim src dir: $NVIM_SRC_DIR
     NVIM_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/nvim"
     echo deploying nvim conf to $NVIM_DEPLOY_DIR
+    rm -rf $NVIM_DEPLOY_DIR
     mkdir -p $NVIM_DEPLOY_DIR &> /dev/null
     # symlink src dirs, accordinglyon't do whole directory since a lot of deps get installed in there and we don't want to check those in
     ln -s "$NVIM_SRC_DIR/init.lua" "$NVIM_DEPLOY_DIR/init.lua"
