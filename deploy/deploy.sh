@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # makes a directory for dotfiles in the current user dir, and then symlinks the repo config dotfile into the config dir
-# make sure to execute from the <src>/deploy dir
+# make sure to execute from the <src>/deploy dir so the correct src dir gets picked up.
 #
 echo ""
 echo ░█▀▄░█▀█░▀█▀░█▀▀░▀█▀░█░░░█▀▀░█▀▀░░░█▀▄░█▀▀░█▀█░█░░░█▀█░█░█
@@ -24,11 +24,12 @@ deploy_tmux() {
     TMUX_SRC_DIR="$(cd .. && pwd)/conf/tmux"
     TMUX_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/tmux"
     rm -rf $TMUX_DEPLOY_DIR
+    rm -rf ~/.tmux/plugins/tpm
     mkdir -p $TMUX_DEPLOY_DIR &> /dev/null
     ln -s "$TMUX_SRC_DIR/tmux.conf" "$TMUX_DEPLOY_DIR/tmux.conf"
     # install tpm
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    echo Tmux Plugin Manager Installed. Install plugins with `CTRL+A` the next time tmux is launched. 
+    echo Tmux Plugin Manager Installed. Install plugins with \'CTRL\+A\-\>I\' the next time tmux is launched. 
 }
 
 deploy_ghostty() {
@@ -52,40 +53,40 @@ deploy_nvim() {
     ln -s "$NVIM_SRC_DIR/lua" "$NVIM_DEPLOY_DIR/lua"
     ln -s "$NVIM_SRC_DIR/img" "$NVIM_DEPLOY_DIR/img"
     ln -s "$NVIM_SRC_DIR/snippets" "$NVIM_DEPLOY_DIR/snippets"
+    ln -s "$NVIM_SRC_DIR/ftplugin" "$NVIM_DEPLOY_DIR/ftplugin"
 }
 
-# determine os and set config directory accordingly
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    CONFIG_DEPLOY_DIR="/Home/$USER/.config"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    echo deploying for mac os!
-    CONFIG_DEPLOY_DIR="/Users/$USER/.config"
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-    # POSIX compatibility layer and Linux environment emulation for Windows
-    CONFIG_DEPLOY_DIR=""
-elif [[ "$OSTYPE" == "msys" ]]; then
-    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-    CONFIG_DEPLOY_DIR=""
-elif [[ "$OSTYPE" == "win32" ]]; then
-    # I'm not sure this can happen.
-    CONFIG_DEPLOY_DIR=""
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    # ...
-    CONFIG_DEPLOY_DIR=""
-else
-    # Unknown.
-    CONFIG_DEPLOY_DIR=""
-fi
-
-echo deploying to $CONFIG_DEPLOY_DIR
-read -p "Do you want to continue (y/n)? " choice
+CONFIG_DEPLOY_DIR="$HOME/.config"
+echo "This script is destructive. Folders in $CONFIG_DEPLOY_DIR may be permanently DESTROYED."
+read -p "Are you sure you want to continue (Y/N)? " choice
 
 case $choice in
     [yY]* ) 
-        deploy_ghostty
-        deploy_aerospace
-        deploy_tmux
-        deploy_nvim
+        # determine os and deploy appropriate dot files
+        if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+            echo deploying for linux!
+        elif [[ "$OSTYPE" == "darwin"* ]]; then
+            echo deploying for mac os!
+            deploy_ghostty
+            deploy_aerospace
+            deploy_tmux
+            deploy_nvim
+            echo done deploying for mac os.
+        elif [[ "$OSTYPE" == "cygwin" ]]; then
+            # POSIX compatibility layer and Linux environment emulation for Windows
+            echo deploying for cygwin!
+        elif [[ "$OSTYPE" == "msys" ]]; then
+            # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+            echo deploying for windows!
+        elif [[ "$OSTYPE" == "win32" ]]; then
+            # I'm not sure this can happen.
+            echo deploying for lol!
+        elif [[ "$OSTYPE" == "freebsd"* ]]; then
+            echo deploying for freebsd!
+        else
+            # Unknown.
+            echo deploying for unknown!
+        fi
         ;;
     [nN]* ) 
         echo "Thank you for using david's dotfiles deployer." ;
@@ -94,3 +95,5 @@ case $choice in
     *) 
         exit ;;
 esac
+echo "Dotfiles deployed. Thanks for using david's dotfiles deployer. " ;
+

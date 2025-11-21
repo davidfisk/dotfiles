@@ -88,3 +88,15 @@ vim.o.guicursor = table.concat({
 vim.env.path = '/usr/bin:/opt/homebrew/bin'
 
 vim.o.winborder = 'rounded'
+
+-- Set default root markers for all clients
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+})
+
+vim.filetype.add {
+  pattern = {
+    ['.*haxe'] = 'haxe',
+    ['.*hx'] = 'haxe',
+  },
+}
