@@ -1,44 +1,29 @@
-local util = require 'lspconfig.util'
-
-local function find_hxml(path)
-  return vim.fs.find(function(name)
-    return name:match '.hxml$'
-  end, { path = path, type = 'file' })
-end
-
 local config = {
   cmd = { 'haxe-language-server' },
+  -- cmd = { 'node', '/Users/david/src/nodejs/haxe-language-server/bin/server.js' },
   filetypes = { 'haxe', 'hx' },
   root_markers = { 'build.hxml', '.git' },
   settings = {
     haxe = {
-      enableServerView = true,
-      enableDiagnostics = true,
-      diagnosticsForAllOpenFiles = true,
+      executable = 'haxe',
       enableCodeLens = true,
-      buildCompletionCache = true,
-      useLegacyCompletion = true,
-      useLegacyDiagnostics = true,
     },
   },
   -- Default value is set by on_new_config.
   init_options = {
     displayArguments = { 'build.hxml' },
-    displayServerConfig = {
-      useSocket = false,
-    },
   },
-  on_new_config = function(new_config, new_root_dir)
-    if new_config.init_options.displayArguments then
-      return
-    end
-
-    local hxml = find_hxml(new_root_dir)[1]
-    if hxml then
-      vim.notify('Using HXML: ' .. hxml)
-      new_config.init_options.displayArguments = { hxml }
-    end
-  end,
+  -- on_new_config = function(new_config, new_root_dir)
+  --   if new_config.init_options.displayArguments then
+  --     return
+  --   end
+  --
+  --   local hxml = find_hxml(new_root_dir)[1]
+  --   if hxml then
+  --     vim.notify('Using HXML: ' .. hxml)
+  --     new_config.init_options.displayArguments = { hxml }
+  --   end
+  -- end,
   docs = {
     description = [[
         https://github.com/vshaxe/haxe-language-server
@@ -79,8 +64,6 @@ local config = {
   },
 }
 
-config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+-- config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 vim.lsp.config('haxe_language_server', config)
 vim.lsp.enable 'haxe_language_server'
-
--- require('lspconfig').haxe_language_server.setup(config)
