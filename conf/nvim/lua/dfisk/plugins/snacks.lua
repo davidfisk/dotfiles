@@ -67,7 +67,7 @@ return {
             -- cmd = "chafa ~/.config/nvim/img/praise.jpg --format symbols --symbols vhalf --size 60x17 --stretch --probe=off",
             -- cmd = "chafa ~/.config/nvim/img/praise.jpg --size 60x17 --stretch --probe=off",
             -- cmd = 'chafa $(find -f ~/.config/nvim/img/ | grep jpg | sort -R | head -1) --size 60x17 --stretch',
-            cmd = 'chafa $(find -f ~/.config/nvim/img/ | grep jpg | sort -R | head -1) --align=center --passthrough=tmux --probe=on',
+            cmd = 'chafa $(find ~/.config/nvim/img/ -type f | grep jpg | sort -R | head -1) --align=center --passthrough=tmux --probe=on',
             -- cmd = "chafa ~/.config/nvim/img/souls.jpg --format symbols --symbols vhalf --size 60x17 --stretch --probe=off",
             -- cmd = "chafa ~/.config/nvim/img/souls.jpg --size 60x17 --stretch --probe=off",
             -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols ascii --size 60x14 --stretch',

@@ -10,7 +10,7 @@ cursor-style-blink = true
 # custom-shader = ./shaders/cursor_synesthaxia.glsl
 
 font-family = JetBrains Mono Nerd Font
-font-size = 24
+font-size = 14
 # font-thicken = true
 
 link-url = true

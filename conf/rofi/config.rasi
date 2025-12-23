@@ -1,0 +1,10 @@
+
+configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
+}
+
+@theme "purple"
+
+/* Insert theme modifications after this */
+

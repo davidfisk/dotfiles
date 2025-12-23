@@ -20,6 +20,22 @@ deploy_aerospace() {
     ln -s "$AEROSPACE_SRC_DIR/aerospace.toml" "$AEROSPACE_DEPLOY_DIR/aerospace.toml"
 }
 
+deploy_sway() {
+    SWAY_SRC_DIR="$(cd .. && pwd)/conf/sway"
+    SWAY_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/sway"
+    rm -rf $SWAY_DEPLOY_DIR
+    mkdir -p $SWAY_DEPLOY_DIR &> /dev/null
+    ln -s "$SWAY_SRC_DIR/config" "$SWAY_DEPLOY_DIR/config"
+}
+
+deploy_rofi() {
+    ROFI_SRC_DIR="$(cd .. && pwd)/conf/rofi"
+    ROFI_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/rofi"
+    rm -rf $ROFI_DEPLOY_DIR
+    mkdir -p $ROFI_DEPLOY_DIR &> /dev/null
+    ln -s "$ROFI_SRC_DIR/config.rasi" "$ROFI_DEPLOY_DIR/config.rasi"
+}
+
 deploy_tmux() {
     TMUX_SRC_DIR="$(cd .. && pwd)/conf/tmux"
     TMUX_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/tmux"
@@ -65,6 +81,11 @@ case $choice in
         # determine os and deploy appropriate dot files
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             echo deploying for linux!
+            deploy_ghostty
+            deploy_tmux
+            deploy_nvim
+            deploy_sway
+            deploy_rofi
         elif [[ "$OSTYPE" == "darwin"* ]]; then
             echo deploying for mac os!
             deploy_ghostty
