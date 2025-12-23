@@ -12,6 +12,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- json pretty print
 vim.keymap.set('n', '<leader>dj', ':%!jq .<CR>', { desc = '[D]ocument pp [J]son' })
 
+vim.keymap.set('n', '<leader>dw', ':set wrap!<CR>', { desc = '[D]ocument [W]rap' })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
