@@ -25,6 +25,7 @@ deploy_sway() {
     SWAY_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/sway"
     rm -rf $SWAY_DEPLOY_DIR
     mkdir -p $SWAY_DEPLOY_DIR &> /dev/null
+    ln -s "$SWAY_SRC_DIR/img" "$SWAY_DEPLOY_DIR/img"
     ln -s "$SWAY_SRC_DIR/config" "$SWAY_DEPLOY_DIR/config"
 }
 

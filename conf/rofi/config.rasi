@@ -4,7 +4,7 @@ configuration {
   combi-modes: [ window, drun, run ];
 }
 
-@theme "purple"
+@theme "material"
 
 /* Insert theme modifications after this */
 
