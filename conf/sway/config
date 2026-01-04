@@ -6,9 +6,8 @@
 # Read `man 5 sway` for a complete reference.
 
 # No Titlebars
-default_border none
-gaps inner 6
-default_border pixel 2
+gaps inner 2
+default_border pixel 4
 set $clear #ffffff00
 # class                  border   background  text     indicator  child_border
 client.focused_inactive  #333333  #5f676a     #ffffff  #484e50    $clear
@@ -264,14 +263,23 @@ bar {
     status_command while date +'%Y-%m-%d %X '; do sleep 1; done
 
     colors {
-        statusline #555555
-        background #000000
+        statusline #cccccc
+        background #00000000
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
 
-# exec swaybg -i "$(find ~/.config/sway/img/ -type f | sort -R | head -1)"
-# output * bg ~/.config/sway/img/196ad9d3122098b297d7b99ce9ff209f-555801595.gif fill
+# set some themes
+
+
+# pick random bg from img dir
 output * bg $(find ~/.config/sway/img/ -type f | sort -R | head -1) fill
+
+# handle audio osd
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+smart_borders on
 
 include /etc/sway/config.d/*
