@@ -76,8 +76,15 @@ automatically-unhide-macos-hidden-apps = true
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
+    # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+    alt-enter = '''exec-and-forget osascript -e '
+    tell application "Terminal"
+    do script
+    activate
+    end tell'
+    '''
 
-    # All possible keys:
+# All possible keys:
     # - Letters.        a, b, c, ..., z
     # - Numbers.        0, 1, 2, ..., 9
     # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
