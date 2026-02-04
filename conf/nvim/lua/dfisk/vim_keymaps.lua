@@ -9,6 +9,12 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Markdown TODO checklist keymaps
+vim.keymap.set('n', '<leader>tt', 'i- [ ] ', { desc = 'New [T]ODO Checkbox' })
+vim.keymap.set('n', '<leader>ts', 'i- [ ] ', { desc = 'New [S]ub TODO Checkbox' })
+vim.keymap.set('n', '<leader>tm', ':s/\\[ \\]/\\[x\\]/<CR>', { desc = '[M]ark Done' })
+vim.keymap.set('n', '<leader>tu', ':s/\\[x\\]/\\[ \\]/<CR>', { desc = '[U]nmark Done' })
+
 -- json pretty print
 vim.keymap.set('n', '<leader>dj', ':%!jq .<CR>', { desc = '[D]ocument pp [J]son' })
 

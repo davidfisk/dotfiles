@@ -21,7 +21,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>s', group = '[S]earch' },
       { '<leader>r', group = '[R]est' }, -- TODO enable this only for http files
       { '<leader>w', group = '[W]orkspace' },
-      { '<leader>t', group = '[T]ab' },
+      { '<leader>t', group = '[T]odo' },
       { '<leader>x', group = 'Trouble' },
       { '<leader>u', group = '[U]tility' },
     }
