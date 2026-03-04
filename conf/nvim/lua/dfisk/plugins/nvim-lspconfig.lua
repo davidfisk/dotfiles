@@ -187,6 +187,7 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
+      html = {},
       lua_ls = {
         -- cmd = {...},
         filetypes = { 'lua', 'p8' },
@@ -253,6 +254,7 @@ return { -- LSP Configuration & Plugins
       'jdtls',
       'vscode-spring-boot-tools',
       'bashls',
+      'html',
       -- 'sonarlint-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -272,6 +274,10 @@ return { -- LSP Configuration & Plugins
       automatic_installation = {},
       automatic_enable = {},
     }
+
+    --Enable (broadcasting) snippet capability for completion
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
     -- TODO: reenable sonarlint someday? seems slow
     -- require('sonarlint').setup {
     --   server = {
