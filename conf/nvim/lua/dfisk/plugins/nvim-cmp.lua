@@ -41,6 +41,7 @@ return { -- Autocompletion
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'hrsh7th/cmp-nvim-lua',
+    'onsails/lspkind.nvim',
   },
   config = function()
     -- See `:help cmp`

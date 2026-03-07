@@ -76,14 +76,6 @@ automatically-unhide-macos-hidden-apps = true
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-    # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-    alt-enter = '''exec-and-forget osascript -e '
-    tell application "Terminal"
-    do script
-    activate
-    end tell'
-    '''
-
 # All possible keys:
     # - Letters.        a, b, c, ..., z
     # - Numbers.        0, 1, 2, ..., 9
@@ -104,12 +96,7 @@ automatically-unhide-macos-hidden-apps = true
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
     # You can uncomment the following lines to open up terminal with alt + enter shortcut
     # (like in i3)
-    # alt-enter = '''exec-and-forget osascript -e '
-    # tell application "Terminal"
-    #     do script
-    #     activate
-    # end tell'
-    # '''
+    alt-shift-enter = 'exec-and-forget open -n /opt/homebrew/Caskroom/ghostty/1.0.1/Ghostty.app'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     cmd-alt-slash = 'layout tiles horizontal vertical'
