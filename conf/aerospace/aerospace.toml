@@ -134,7 +134,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-cmd-s = 'layout v_accordion' # 'layout stacking' in i3
     alt-cmd-w = 'layout h_accordion' # 'layout tabbed' in i3
     alt-cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
-    alt-cmd-space = 'layout floating tiling' # 'floating toggle' in i3
+    alt-cmd-enter = 'layout floating tiling' # 'floating toggle' in i3
     alt-cmd-r = 'mode resize'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace

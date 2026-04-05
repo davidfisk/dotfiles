@@ -51,10 +51,16 @@ return {
             },
             {
               icon = '󰒲 ',
-              key = 'L',
+              key = 'l',
               desc = 'Lazy',
               action = ':Lazy',
               enabled = package.loaded.lazy ~= nil,
+            },
+            {
+              icon = ' ',
+              key = 'e',
+              desc = 'Explorer',
+              action = ':lua Snacks.explorer()',
             },
             { icon = '󰺾 ', key = 'M', desc = 'Mason', action = ':Mason' },
             { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },

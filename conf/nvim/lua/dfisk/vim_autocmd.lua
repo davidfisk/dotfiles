@@ -11,3 +11,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+local function augroup(name)
+  return vim.api.nvim_create_augroup('dfisk.vim.' .. name, { clear = true })
+end
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  group = augroup 'jenkinsfile_detect',
+  pattern = { 'Jenkinsfile' },
+  callback = function()
+    vim.cmd 'set filetype=groovy'
+  end,
+})
