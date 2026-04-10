@@ -100,3 +100,5 @@ vim.filetype.add {
     ['.*hx'] = 'haxe',
   },
 }
+
+vim.opt.termguicolors = true

@@ -242,7 +242,6 @@ return { -- LSP Configuration & Plugins
       'vscode-spring-boot-tools',
       'bashls',
       'html',
-      'groovy',
       -- 'sonarlint-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

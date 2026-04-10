@@ -99,6 +99,9 @@ return {
       notifier = { enabled = true },
       picker = {
         enabled = true,
+        layout = {
+          preset = 'telescope',
+        },
         ui_select = true,
         formatters = { file = { truncate = 70 } },
         win = {
@@ -123,21 +126,21 @@ return {
         function()
           Snacks.picker.smart()
         end,
-        desc = 'Smart Find Files',
+        { desc = 'Smart Find Files' },
       },
       {
         '<leader>,',
         function()
           Snacks.picker.buffers()
         end,
-        desc = 'Buffers',
+        { desc = 'Buffers' },
       },
       {
         '<leader>/',
         function()
           Snacks.picker.grep()
         end,
-        desc = 'Grep',
+        { desc = 'Grep' },
       },
       {
         '<leader>:',
