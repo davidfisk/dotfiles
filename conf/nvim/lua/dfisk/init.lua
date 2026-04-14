@@ -1,4 +1,3 @@
--- TODO: migrate LAZY to PACK
 vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)
     local name, kind = ev.data.spec.name, ev.data.kind
@@ -20,7 +19,6 @@ end
 
 vim.pack.add {
   'https://github.com/nvim-treesitter/nvim-treesitter',
-  'https://github.com/ibhagwan/fzf-lua',
   'https://github.com/nvim-tree/nvim-web-devicons',
   'https://github.com/nvim-zh/colorful-winsep.nvim',
   'https://github.com/mfussenegger/nvim-jdtls',
@@ -46,3 +44,4 @@ require 'dfisk.pack.everforest'
 require 'dfisk.pack.which-key'
 require 'dfisk.pack.gitgraph'
 require 'dfisk.pack.trouble'
+require 'dfisk.pack.plantuml'

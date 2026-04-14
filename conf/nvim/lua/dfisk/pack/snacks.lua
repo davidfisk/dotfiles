@@ -7,6 +7,7 @@ require('snacks').setup {
   bufdelete = { enabled = true },
   dashboard = {
     enabled = true,
+    -- Used by the `header` section
     preset = {
       keys = {
         { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.files()' },
@@ -44,19 +45,16 @@ require('snacks').setup {
         { icon = '󰺾 ', key = 'M', desc = 'Mason', action = ':Mason' },
         { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
       },
+      header = 'Neovim ' .. tostring(vim.version()),
+    },
+    formats = {
+      header = { '%s', align = 'center' },
     },
     sections = {
+      { section = 'header', padding = 0 },
       {
         section = 'terminal',
-        -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols vhalf --size 60x17 --stretch --probe=off',
-        -- cmd = "chafa ~/.config/nvim/img/praise.jpg --format symbols --symbols vhalf --size 60x17 --stretch --probe=off",
-        -- cmd = "chafa ~/.config/nvim/img/praise.jpg --size 60x17 --stretch --probe=off",
-        -- cmd = 'chafa $(find -f ~/.config/nvim/img/ | grep jpg | sort -R | head -1) --size 60x17 --stretch',
-        cmd = 'chafa $(find ~/.config/nvim/img/ -type f | grep jpg | sort -R | head -1) --align=center --passthrough=tmux --probe=on',
-        -- cmd = "chafa ~/.config/nvim/img/souls.jpg --format symbols --symbols vhalf --size 60x17 --stretch --probe=off",
-        -- cmd = "chafa ~/.config/nvim/img/souls.jpg --size 60x17 --stretch --probe=off",
-        -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --format symbols --symbols ascii --size 60x14 --stretch',
-        -- cmd = 'chafa ~/.config/nvim/landscape2.jpg --size 60x14 --stretch',
+        cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --passthrough=tmux --probe=on; sleep .1',
         height = 14,
         padding = 0,
       },

@@ -8,6 +8,13 @@ require('which-key').setup {
 -- Document existing key chains
 -- v3 keybindings
 require('which-key').add {
+  {
+    '<leader>?',
+    function()
+      require('which-key').show { global = false }
+    end,
+    desc = 'Buffer Local Keymaps (which-key)',
+  },
   -- { '<leader>a', group = '[A]erial LSP Symbols' },
   { '<leader>c', group = '[C]ode' },
   { '<leader>d', group = '[D]ocument' },

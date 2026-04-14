@@ -22,3 +22,5 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
     vim.cmd 'set filetype=groovy'
   end,
 })
+
+vim.api.nvim_create_user_command('LspInfo', 'checkhealth vim.lsp', { desc = 'Show LSP Info' })
