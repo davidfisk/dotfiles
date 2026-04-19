@@ -1,3 +1,5 @@
+-- TODO: break snippets into own config
+
 vim.pack.add {
   'https://github.com/folke/neodev.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = 'main' },
