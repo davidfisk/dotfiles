@@ -34,6 +34,18 @@ require('blink.cmp').setup {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
   fuzzy = { implementation = 'lua' },
+  completion = {
+    -- Show documentation when selecting a completion item
+    documentation = { auto_show = true, auto_show_delay_ms = 500 },
+
+    -- Display a preview of the selected item on the current line
+    ghost_text = { enabled = true },
+    -- NOTE: some LSPs may add auto brackets themselves anyway
+    accept = { auto_brackets = { enabled = false } },
+
+    -- Don't select by default, auto insert on selection
+    -- list = { selection = { preselect = false, auto_insert = true } },
+  },
 }
 
 vim.api.nvim_create_autocmd('LspAttach', {

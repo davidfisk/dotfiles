@@ -45,7 +45,7 @@ require('snacks').setup {
         { icon = '󰺾 ', key = 'M', desc = 'Mason', action = ':Mason' },
         { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
       },
-      header = 'Neovim ' .. tostring(vim.version()),
+      header = 'NVIM v' .. tostring(vim.version()),
     },
     formats = {
       header = { '%s', align = 'center' },
