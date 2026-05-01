@@ -27,7 +27,6 @@ require('blink.cmp').setup {
     -- Adjusts spacing to ensure icons are aligned
     nerd_font_variant = 'mono',
   },
-
   -- Default list of enabled providers defined so that you can extend it
   -- elsewhere in your config, without redefining it, due to `opts_extend`
   sources = {
@@ -36,8 +35,19 @@ require('blink.cmp').setup {
   fuzzy = { implementation = 'lua' },
   completion = {
     -- Show documentation when selecting a completion item
-    documentation = { auto_show = true, auto_show_delay_ms = 500 },
-
+    -- documentation = { auto_show = true, auto_show_delay_ms = 500, winblend = 15 },
+    documentation = {
+      window = {
+        auto_show = true,
+        auto_show_delay_ms = 500,
+        border = 'rounded',
+        winblend = 100,
+      },
+    },
+    menu = {
+      border = 'rounded',
+      winblend = 100,
+    },
     -- Display a preview of the selected item on the current line
     ghost_text = { enabled = true },
     -- NOTE: some LSPs may add auto brackets themselves anyway
