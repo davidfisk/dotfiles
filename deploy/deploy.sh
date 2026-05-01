@@ -73,6 +73,8 @@ deploy_nvim() {
     ln -s "$NVIM_SRC_DIR/ftplugin" "$NVIM_DEPLOY_DIR/ftplugin"
 }
 
+# TODO: accept CLI args for installing dependencies atomically
+
 CONFIG_DEPLOY_DIR="$HOME/.config"
 echo "This script is destructive. Folders in $CONFIG_DEPLOY_DIR may be permanently DESTROYED."
 read -p "Are you sure you want to continue (Y/N)? " choice

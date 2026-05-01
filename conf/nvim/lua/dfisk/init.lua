@@ -17,6 +17,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
+require('vim._core.ui2').enable {}
+
 vim.pack.add {
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/nvim-tree/nvim-web-devicons',
