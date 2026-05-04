@@ -76,9 +76,6 @@ require('snacks').setup {
   notifier = { enabled = true },
   picker = {
     enabled = true,
-    layout = {
-      preset = 'telescope',
-    },
     ui_select = true,
     formatters = { file = { truncate = 70 } },
     win = {

@@ -37,9 +37,9 @@ require('blink.cmp').setup {
     -- Show documentation when selecting a completion item
     -- documentation = { auto_show = true, auto_show_delay_ms = 500, winblend = 15 },
     documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 500,
       window = {
-        auto_show = true,
-        auto_show_delay_ms = 500,
         border = 'rounded',
         winblend = 100,
       },
