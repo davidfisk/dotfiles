@@ -102,3 +102,5 @@ vim.filetype.add {
 }
 
 vim.opt.termguicolors = true
+
+vim.o.cmdheight = 0
