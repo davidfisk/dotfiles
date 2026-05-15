@@ -1,0 +1,5 @@
+[tasks.install]
+description = "Deploys configs to home dir. "
+run = [
+    "cd ./deploy && sh ./deploy.sh"
+]

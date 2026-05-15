@@ -104,3 +104,12 @@ vim.filetype.add {
 vim.opt.termguicolors = true
 
 vim.o.cmdheight = 0
+
+require('vim._core.ui2').enable {}
+
+-- Change the Diagnostic symbols in the sign column (gutter)
+local signs = { Error = ' ', Warn = ' ', Hint = ' 󰜴', Info = ' ' }
+for type, icon in pairs(signs) do
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+end

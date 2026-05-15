@@ -1,24 +1,3 @@
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if name == 'nvim-treesitter' and kind == 'update' then
-      if not ev.data.active then
-        vim.cmd.packadd 'nvim-treesitter'
-      end
-      vim.cmd 'TSUpdate'
-    end
-  end,
-})
-
--- Change the Diagnostic symbols in the sign column (gutter)
-local signs = { Error = ' ', Warn = ' ', Hint = ' 󰜴', Info = ' ' }
-for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-end
-
-require('vim._core.ui2').enable {}
-
 vim.pack.add {
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/nvim-tree/nvim-web-devicons',
@@ -29,13 +8,14 @@ vim.pack.add {
   'https://github.com/jmbuhr/otter.nvim',
   'https://github.com/folke/todo-comments.nvim',
 }
+-- NOTE: ez configs
 require('colorful-winsep').setup()
 require('colorizer').setup()
 require('render-markdown').setup()
 require('otter').setup()
 require('todo-comments').setup { signs = true }
 
--- TODO: fix dir to make relative
+-- NOTE:: more complicated configs are in individual files for cleaner, easier to read init
 require 'dfisk.pack.snacks'
 require 'dfisk.pack.mini'
 require 'dfisk.pack.aerial'
