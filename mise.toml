@@ -1,5 +1,5 @@
 [tasks.install]
-description = "Deploys configs to home dir. "
+description = "Deploys & symlinks configs to home dir config directory. "
 run = [
     "cd ./deploy && sh ./deploy.sh"
 ]

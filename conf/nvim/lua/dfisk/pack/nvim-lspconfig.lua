@@ -41,12 +41,12 @@ require('blink.cmp').setup {
       auto_show_delay_ms = 500,
       window = {
         border = 'rounded',
-        winblend = 100,
+        winblend = 50,
       },
     },
     menu = {
       border = 'rounded',
-      winblend = 100,
+      winblend = 50,
     },
     -- Display a preview of the selected item on the current line
     ghost_text = { enabled = true },
