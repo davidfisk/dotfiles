@@ -58,6 +58,15 @@ deploy_ghostty() {
     ln -s "$GHOSTTY_SRC_DIR/shaders" "$GHOSTTY_DEPLOY_DIR/shaders"
 }
 
+deploy_kitty() {
+    KITTY_SRC_DIR="$(cd .. && pwd)/conf/kitty"
+    KITTY_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/kitty"
+    rm -rf $KITTY_DEPLOY_DIR
+    mkdir -p $KITTY_DEPLOY_DIR &> /dev/null
+    ln -s "$KITTY_SRC_DIR/kitty.conf" "$KITTY_DEPLOY_DIR/kitty.conf"
+    ln -s "$KITTY_SRC_DIR/navigate_kitty.py" "$KITTY_DEPLOY_DIR/navigate_kitty.py"
+}
+
 deploy_nvim() {
     NVIM_SRC_DIR="$(cd .. && pwd)/conf/nvim"
     echo nvim src dir: $NVIM_SRC_DIR
@@ -92,6 +101,7 @@ case $choice in
         elif [[ "$OSTYPE" == "darwin"* ]]; then
             echo deploying for mac os!
             deploy_ghostty
+            deploy_kitty
             deploy_aerospace
             deploy_tmux
             deploy_nvim
