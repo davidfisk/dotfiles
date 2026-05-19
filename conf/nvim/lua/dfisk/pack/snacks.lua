@@ -54,7 +54,7 @@ require('snacks').setup {
       { section = 'header', padding = 0 },
       {
         section = 'terminal',
-        cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --passthrough=tmux --probe=on; sleep .1',
+        cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --passthrough=tmux --probe=on',
         height = 14,
         padding = 0,
       },

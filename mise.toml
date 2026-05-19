@@ -3,3 +3,9 @@ description = "Deploys & symlinks configs to home dir config directory. "
 run = [
     "cd ./deploy && sh ./deploy.sh"
 ]
+
+[tasks.mywork]
+description = "Launch tmux with my work windows"
+run = [
+    "./conf/tmux/tmux-work.sh"
+]
