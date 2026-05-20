@@ -75,7 +75,7 @@ deploy_nvim() {
     echo deploying nvim conf to $NVIM_DEPLOY_DIR
     rm -rf $NVIM_DEPLOY_DIR
     mkdir -p $NVIM_DEPLOY_DIR &> /dev/null
-    # symlink src dirs, accordinglyon't do whole directory since a lot of deps get installed in there and we don't want to check those in
+    # symlink src dirs, accordingly. don't do whole directory since a lot of deps get installed in there and we don't want to check those in
     ln -s "$NVIM_SRC_DIR/init.lua" "$NVIM_DEPLOY_DIR/init.lua"
     ln -s "$NVIM_SRC_DIR/lua" "$NVIM_DEPLOY_DIR/lua"
     ln -s "$NVIM_SRC_DIR/img" "$NVIM_DEPLOY_DIR/img"

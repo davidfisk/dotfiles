@@ -1,21 +1,6 @@
--- TODO: break snippets into own config
-
-vim.pack.add {
-  'https://github.com/folke/neodev.nvim',
-  { src = 'https://github.com/saghen/blink.cmp', version = 'main' },
-  'https://github.com/rafamadriz/friendly-snippets',
-  'https://github.com/L3MON4D3/LuaSnip',
-  'https://github.com/hrsh7th/vim-vsnip',
-  'https://github.com/mfussenegger/nvim-lint',
-  'https://github.com/rshkarin/mason-nvim-lint',
-  'https://github.com/mason-org/mason.nvim',
-  'https://github.com/mason-org/mason-lspconfig.nvim',
-  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/j-hui/fidget.nvim',
-}
-
-require('blink.cmp').setup {
+vim.pack.add({ 'https://github.com/saghen/blink.lib', 'https://github.com/saghen/blink.cmp' })
+local cmp = require('blink.cmp')
+cmp.setup {
   snippets = { preset = 'default' },
   -- 'default' for mappings similar to built-in completion
   -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
@@ -57,6 +42,21 @@ require('blink.cmp').setup {
     -- list = { selection = { preselect = false, auto_insert = true } },
   },
 }
+vim.pack.add {
+  'https://github.com/folke/neodev.nvim',
+  'https://github.com/rafamadriz/friendly-snippets',
+  'https://github.com/L3MON4D3/LuaSnip',
+  'https://github.com/hrsh7th/vim-vsnip',
+  'https://github.com/mfussenegger/nvim-lint',
+  'https://github.com/rshkarin/mason-nvim-lint',
+  'https://github.com/mason-org/mason.nvim',
+  'https://github.com/mason-org/mason-lspconfig.nvim',
+  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/j-hui/fidget.nvim',
+}
+
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('custom-lsp-attach', { clear = true }),
