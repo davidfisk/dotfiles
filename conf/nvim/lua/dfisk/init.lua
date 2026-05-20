@@ -16,6 +16,7 @@ require('otter').setup()
 require('todo-comments').setup { signs = true }
 
 -- NOTE:: more complicated configs are in individual files for cleaner, easier to read init
+-- require 'dfisk.pack.fff'
 require 'dfisk.pack.snacks'
 require 'dfisk.pack.mini'
 require 'dfisk.pack.aerial'

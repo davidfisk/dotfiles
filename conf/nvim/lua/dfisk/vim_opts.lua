@@ -16,6 +16,7 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.isfname:append '@-@'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -102,7 +103,7 @@ vim.filetype.add {
 }
 
 vim.opt.termguicolors = true
-
+vim.opt.laststatus = 3
 vim.o.cmdheight = 0
 
 require('vim._core.ui2').enable {}
