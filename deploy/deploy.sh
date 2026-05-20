@@ -44,6 +44,7 @@ deploy_tmux() {
     rm -rf ~/.tmux/plugins/tpm
     mkdir -p $TMUX_DEPLOY_DIR &> /dev/null
     ln -s "$TMUX_SRC_DIR/tmux.conf" "$TMUX_DEPLOY_DIR/tmux.conf"
+    ln -s "$TMUX_SRC_DIR/tmux-work.sh" "$TMUX_DEPLOY_DIR/tmux-work.sh"
     # install tpm
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     echo Tmux Plugin Manager Installed. Install plugins with \'CTRL\+A\-\>I\' the next time tmux is launched. 
@@ -82,6 +83,14 @@ deploy_nvim() {
     ln -s "$NVIM_SRC_DIR/ftplugin" "$NVIM_DEPLOY_DIR/ftplugin"
 }
 
+deploy_mise() {
+    MISE_SRC_DIR="$(cd .. && pwd)/conf/mise"
+    MISE_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/mise"
+    rm -rf $MISE_DEPLOY_DIR
+    mkdir -p $MISE_DEPLOY_DIR &> /dev/null
+    ln -s "$MISE_SRC_DIR/config.toml" "$MISE_DEPLOY_DIR/config.toml"
+}
+
 # TODO: accept CLI args for installing dependencies atomically
 
 CONFIG_DEPLOY_DIR="$HOME/.config"
@@ -98,6 +107,7 @@ case $choice in
             deploy_nvim
             deploy_sway
             deploy_rofi
+            deploy_mise
         elif [[ "$OSTYPE" == "darwin"* ]]; then
             echo deploying for mac os!
             deploy_ghostty
@@ -105,6 +115,7 @@ case $choice in
             deploy_aerospace
             deploy_tmux
             deploy_nvim
+            deploy_mise
             echo done deploying for mac os.
         elif [[ "$OSTYPE" == "cygwin" ]]; then
             # POSIX compatibility layer and Linux environment emulation for Windows
