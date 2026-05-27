@@ -7,6 +7,7 @@ local config = {
   settings = {
     runtimes = {
       -- determine runtime path on mac jenv with `jenv which 24`
+      -- TODO: update to MISE
       {
         name = 'jdk17',
         path = '$HOME/.jenv/versions/17.0/bin/java',
@@ -18,7 +19,7 @@ local config = {
     },
     java = {
       format = {
-        enabled = false, -- NOTE: autoformat java
+        enabled = true, -- NOTE: autoformat java
       },
       tabSize = 4,
       insertSpaces = true,
@@ -31,6 +32,18 @@ local config = {
       enabled = true,
     },
     signatureHelp = { enabled = true },
+    capabilities = {
+      workspace = {
+        configuration = true,
+      },
+      textDocument = {
+        completion = {
+          completionItem = {
+            snippentSupport = true,
+          },
+        },
+      },
+    },
     -- sources = {
     --   organizeImports = {
     --     starThreshold = 9999,

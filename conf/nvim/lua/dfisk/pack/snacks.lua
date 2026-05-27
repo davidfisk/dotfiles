@@ -7,7 +7,6 @@ require('snacks').setup {
   bufdelete = { enabled = true },
   dashboard = {
     enabled = true,
-    -- Used by the `header` section
     preset = {
       keys = {
         { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.files()' },
@@ -51,13 +50,14 @@ require('snacks').setup {
       header = { '%s', align = 'center' },
     },
     sections = {
-      { section = 'header', padding = 0 },
+      { pane = 1, { section = 'header', padding = 0 } },
       {
         section = 'terminal',
         -- cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --probe=on',
         cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --probe=on 2> /dev/null',
-        height = 30,
+        height = 20,
         padding = 0,
+        ttl = 120,
       },
       {
         pane = 2,
@@ -67,6 +67,15 @@ require('snacks').setup {
           padding = 1,
         },
         -- { section = 'startup' },
+      },
+      {
+        pane = 2,
+        padding = 0,
+        section = 'terminal',
+        cmd = 'echo "\\"No good deed shall go unpunished. \\"\n\n                        - The Cheeky Lord"',
+        hl = 'header',
+        indent = 8,
+        ttl = 1200,
       },
     },
   },

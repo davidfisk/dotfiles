@@ -1,4 +1,12 @@
-# all tasks here should start with "_" for easier sorting in `mise run`
+[tools]
+java = "latest"
+lazygit = "latest"
+tmux = "latest"
+fzf = "latest"
+prettier = "latest"
+node = "latest"
+
+# all tasks here should start with "_" for easier sorting of global tasks in `mise run`
 [tasks._start_tmux]
 description = "Launch tmux with my work windows"
 run = [
