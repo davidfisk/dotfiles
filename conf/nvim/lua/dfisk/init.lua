@@ -15,6 +15,8 @@ require('render-markdown').setup()
 require('otter').setup()
 require('todo-comments').setup { signs = true }
 
+require('nvim-treesitter').install { 'cpp', 'javascript', 'java', 'markdown' }
+
 -- NOTE:: more complicated configs are in individual files for cleaner, easier to read init
 -- require 'dfisk.pack.fff'
 require 'dfisk.pack.snacks'

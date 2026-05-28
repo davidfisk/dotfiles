@@ -72,7 +72,7 @@ require('snacks').setup {
         pane = 2,
         padding = 0,
         section = 'terminal',
-        cmd = 'echo "\\"No good deed shall go unpunished. \\"\n\n                        - The Cheeky Lord"',
+        cmd = 'echo "\\"No good deed shall go unpunished. \\"\n\n                        - Our Cheeky Lord"',
         hl = 'header',
         indent = 8,
         ttl = 1200,
