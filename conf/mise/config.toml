@@ -5,6 +5,8 @@ tmux = "latest"
 fzf = "latest"
 prettier = "latest"
 node = "latest"
+tree-sitter = "latest"
+fastfetch = "latest"
 
 # all tasks here should start with "_" for easier sorting of global tasks in `mise run`
 [tasks._start_tmux]
