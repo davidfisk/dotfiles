@@ -140,5 +140,7 @@ case $choice in
     *) 
         exit ;;
 esac
+# install user global tools via mise if it's available
+which mise > /dev/null 2>&1 && mise install
 echo "Dotfiles deployed. Thanks for using david's dotfiles deployer. " ;
 
