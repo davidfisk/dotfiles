@@ -36,3 +36,6 @@ vim.api.nvim_create_autocmd('PackChanged', {
 })
 
 vim.api.nvim_create_user_command('LspInfo', 'checkhealth vim.lsp', { desc = 'Show LSP Info' })
+
+-- prevent "process exited 0" from displaying when nvim terminals run successful commands
+vim.api.nvim_clear_autocmds { group = 'nvim.terminal', event = 'TermClose' }

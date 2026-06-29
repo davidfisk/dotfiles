@@ -54,10 +54,11 @@ require('snacks').setup {
       {
         section = 'terminal',
         -- cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --probe=on',
-        cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --probe=on 2> /dev/null',
+        -- cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --probe=on 2> /dev/null',
+        cmd = 'chafa $(find ~/.config/nvim/img/ -type f | sort -R | head -1) --align=center --probe=on',
         height = 20,
         padding = 0,
-        ttl = 120,
+        ttl = 0,
       },
       {
         pane = 2,
@@ -72,10 +73,10 @@ require('snacks').setup {
         pane = 2,
         padding = 0,
         section = 'terminal',
-        cmd = 'echo "\\"No good deed shall go unpunished. \\"\n\n                        - Our Cheeky Lord"',
+        cmd = 'echo "\\"No good deed shall go unpunished. \\"\n\n                        - Our Cheeky Lord" ; sleep .1',
         hl = 'header',
         indent = 8,
-        ttl = 1200,
+        ttl = 60000,
       },
     },
   },
@@ -95,6 +96,29 @@ require('snacks').setup {
           ['<c-s>'] = { 'edit_split', mode = { 'i', 'n' } },
           ['<c-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
           -- NOTE: ALT+W cycles between results fields!!!
+        },
+      },
+    },
+    sources = {
+      explorer = {
+        auto_close = true,
+        cycle = true,
+        layout = {
+          { preview = true },
+          layout = {
+            box = 'horizontal',
+            width = 0.9,
+            height = 0.9,
+            {
+              box = 'vertical',
+              border = 'rounded',
+              title = '{source} {live} {flags}',
+              title_pos = 'center',
+              { win = 'input', height = 1, border = 'bottom' },
+              { win = 'list', border = 'none' },
+            },
+            { win = 'preview', border = 'rounded', width = 0.7, title = '{preview}' },
+          },
         },
       },
     },
