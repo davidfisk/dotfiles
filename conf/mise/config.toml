@@ -8,6 +8,14 @@ node = "latest"
 tree-sitter = "latest"
 fastfetch = "latest"
 maven = "latest"
+neovim = "latest"
+fd = "latest"
+python = "3.14"
+pnpm = "latest"
+"pipx:poetry" = "latest"
+
+[settings]
+minimum_release_age = "2d"
 
 # all tasks here should start with "_" for easier sorting of global tasks in `mise run`
 [tasks._start_tmux]
