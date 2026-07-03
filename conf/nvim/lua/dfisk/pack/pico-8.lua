@@ -1,0 +1,7 @@
+-- on_attach = function(current_client, bufnr)
+--   print 'inside on_attach for pico-8'
+-- end
+--
+-- -- use local version as when i use the remote git version for some reason the indents on pico 8 "shorthand if" does not work as expected, even though code should be identical. must be some lazy quirk.
+-- -- I would rather fetch this plugin via lazy so figure this out someday.
+-- vim.pack.add { 'https://github.com/Bakudankun/PICO-8.vim' }
