@@ -1,5 +1,5 @@
-vim.pack.add({ 'https://github.com/saghen/blink.lib', 'https://github.com/saghen/blink.cmp' })
-local cmp = require('blink.cmp')
+vim.pack.add { 'https://github.com/saghen/blink.lib', 'https://github.com/saghen/blink.cmp' }
+local cmp = require 'blink.cmp'
 cmp.setup {
   snippets = { preset = 'default' },
   -- 'default' for mappings similar to built-in completion
@@ -55,8 +55,6 @@ vim.pack.add {
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/j-hui/fidget.nvim',
 }
-
-
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('custom-lsp-attach', { clear = true }),
@@ -152,6 +150,7 @@ local servers = {
   phpactor = {},
   intelephense = {},
   clangd = {},
+  pico8_ls = {},
   svelte = {
     on_attach = function(client, bufnr)
       if client.name == 'svelte' then
@@ -177,7 +176,7 @@ local servers = {
   html = {},
   lua_ls = {
     -- cmd = {...},
-    filetypes = { 'lua', 'p8' },
+    filetypes = { 'lua' },
     -- capabilities = {},
     settings = {
       Lua = {
@@ -242,6 +241,7 @@ vim.list_extend(ensure_installed, {
   'vscode-spring-boot-tools',
   'bashls',
   'html',
+  'pico8_ls',
   -- 'groovy',
   -- 'sonarlint-language-server',
 })

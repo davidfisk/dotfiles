@@ -102,6 +102,16 @@ vim.filetype.add {
   },
 }
 
+vim.filetype.add {
+  extension = {
+    p8 = 'p8',
+  },
+  pattern = {
+    ['.*p8'] = 'p8',
+    ['.p8'] = 'p8',
+  },
+}
+
 vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.o.cmdheight = 0
