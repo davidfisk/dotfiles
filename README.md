@@ -5,6 +5,8 @@
 ## helpful additions
 
 ### mac
+
+#### zsh
 ```sh
 brew install zsh-autosuggestions
 brew install zsh-autocomplete
