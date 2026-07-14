@@ -16,10 +16,22 @@ pnpm = "latest"
 
 [settings]
 minimum_release_age = "2d"
+not_found_auto_install = false
 
 # all tasks here should start with "_" for easier sorting of global tasks in `mise run`
 [tasks._start_tmux]
 description = "Launch tmux with my work windows"
 run = [
     "~/.config/tmux/tmux-work.sh"
+]
+[tasks._login_1password]
+description = "Login to 1password CLI client and set necessary env vars"
+run = [
+    "eval $(op signin)"
+]
+
+[tasks._login_gandalf_aws]
+description = "Login in to AWS AOL Help Staging"
+run = [
+    "gandalf aws 813565873192 eu-central-1 InfraViewer"
 ]

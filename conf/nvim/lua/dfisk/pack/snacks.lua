@@ -107,8 +107,8 @@ require('snacks').setup {
           { preview = true },
           layout = {
             box = 'horizontal',
-            width = 0.9,
-            height = 0.9,
+            width = 0.99,
+            height = 0.99,
             {
               box = 'vertical',
               border = 'rounded',
