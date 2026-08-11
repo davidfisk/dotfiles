@@ -6,7 +6,6 @@ cmp.setup {
   -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
   -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
   keymap = { preset = 'default' },
-
   appearance = {
     -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
     -- Adjusts spacing to ensure icons are aligned
@@ -176,7 +175,7 @@ local servers = {
   html = {},
   lua_ls = {
     -- cmd = {...},
-    filetypes = { 'lua' },
+    filetypes = { 'lua', 'p8' },
     -- capabilities = {},
     settings = {
       Lua = {
