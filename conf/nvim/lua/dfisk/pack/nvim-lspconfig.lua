@@ -149,7 +149,9 @@ local servers = {
   phpactor = {},
   intelephense = {},
   clangd = {},
-  pico8_ls = {},
+  pico8_ls = {
+    filetypes = { 'pico8', 'p8' },
+  },
   svelte = {
     on_attach = function(client, bufnr)
       if client.name == 'svelte' then
@@ -175,7 +177,7 @@ local servers = {
   html = {},
   lua_ls = {
     -- cmd = {...},
-    filetypes = { 'lua', 'p8' },
+    filetypes = { 'lua' },
     -- capabilities = {},
     settings = {
       Lua = {
