@@ -44,7 +44,7 @@ output HDMI-A-1 {
     mode 3840x2160@120.000Hz
     render_bit_depth 10
     adaptive_sync off
-    hdr off
+    hdr on
 }
 # HDR Mapping
 bindsym $mod+Shift+z exec swaymsg output HDMI-A-1 hdr toggle
@@ -156,6 +156,7 @@ bindsym $mod+Shift+z exec swaymsg output HDMI-A-1 hdr toggle
     bindsym $mod+o workspace notes
     bindsym $mod+m workspace music
     bindsym $mod+e workspace email
+    bindsym $mod+u workspace utility
 
    # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
@@ -173,6 +174,7 @@ bindsym $mod+Shift+z exec swaymsg output HDMI-A-1 hdr toggle
     bindsym $mod+Shift+o move container to workspace notes
     bindsym $mod+Shift+m move container to workspace music
     bindsym $mod+Shift+e move container to workspace email
+    bindsym $mod+Shift+u move container to workspace utility
  
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
@@ -267,6 +269,7 @@ bar {
         background #00000000
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+    # mode hide
 }
 
 # set some themes

@@ -12,7 +12,7 @@ neovim = "latest"
 fd = "latest"
 python = "3.14"
 pnpm = "latest"
-"pipx:poetry" = "latest"
+# "pipx:poetry" = "latest"
 
 [settings]
 minimum_release_age = "2d"
