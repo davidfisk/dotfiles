@@ -87,6 +87,7 @@ require('snacks').setup {
     enabled = true,
     ui_select = true,
     formatters = { file = { truncate = 70 } },
+    exclude = { 'target', 'node_modules' },
     win = {
       -- input window
       input = {

@@ -104,11 +104,11 @@ vim.filetype.add {
 
 vim.filetype.add {
   extension = {
-    p8 = 'p8',
+    pico8 = 'p8',
   },
   pattern = {
-    ['.*p8'] = 'p8',
-    ['.p8'] = 'p8',
+    ['.*p8'] = 'pico8',
+    ['.p8'] = 'pico8',
   },
 }
 
@@ -124,3 +124,8 @@ for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
+
+vim.lsp.codelens.enable(true)
+vim.lsp.semantic_tokens.enable(true)
+
+vim.opt.autoread = true

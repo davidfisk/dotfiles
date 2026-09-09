@@ -1,7 +1,8 @@
--- on_attach = function(current_client, bufnr)
---   print 'inside on_attach for pico-8'
--- end
---
--- -- use local version as when i use the remote git version for some reason the indents on pico 8 "shorthand if" does not work as expected, even though code should be identical. must be some lazy quirk.
--- -- I would rather fetch this plugin via lazy so figure this out someday.
--- vim.pack.add { 'https://github.com/Bakudankun/PICO-8.vim' }
+-- NOTE: this is note the LSP config, this is just for colorizing
+vim.pack.add { '~/src/nvim/PICO-8.vim' }
+
+vim.g.pico8_config = {
+  imitate_console = 0,
+  use_keymap = 0,
+  colorize_graphics = 1,
+}

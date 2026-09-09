@@ -6,7 +6,6 @@ cmp.setup {
   -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
   -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
   keymap = { preset = 'default' },
-
   appearance = {
     -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
     -- Adjusts spacing to ensure icons are aligned
@@ -150,7 +149,9 @@ local servers = {
   phpactor = {},
   intelephense = {},
   clangd = {},
-  pico8_ls = {},
+  pico8_ls = {
+    filetypes = { 'pico8', 'p8' },
+  },
   svelte = {
     on_attach = function(client, bufnr)
       if client.name == 'svelte' then
