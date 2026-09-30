@@ -59,6 +59,15 @@ deploy_ghostty() {
     ln -s "$GHOSTTY_SRC_DIR/shaders" "$GHOSTTY_DEPLOY_DIR/shaders"
 }
 
+deploy_fish() {
+    FISH_SRC_DIR="$(cd .. && pwd)/conf/ghostty"
+    FISH_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/ghostty"
+    rm -rf $FISH_DEPLOY_DIR
+    mkdir -p $FISH_DEPLOY_DIR &> /dev/null
+    ln -s "$FISH_SRC_DIR/config" "$FISH_DEPLOY_DIR/config"
+    ln -s "$FISH_SRC_DIR/shaders" "$FISH_DEPLOY_DIR/shaders"
+}
+
 deploy_kitty() {
     KITTY_SRC_DIR="$(cd .. && pwd)/conf/kitty"
     KITTY_DEPLOY_DIR="${CONFIG_DEPLOY_DIR}/kitty"
@@ -108,6 +117,7 @@ case $choice in
             deploy_sway
             deploy_rofi
             deploy_mise
+            deploy_fish
         elif [[ "$OSTYPE" == "darwin"* ]]; then
             echo deploying for mac os!
             deploy_ghostty
@@ -116,6 +126,7 @@ case $choice in
             deploy_tmux
             deploy_nvim
             deploy_mise
+            deploy_fish
             echo done deploying for mac os.
         elif [[ "$OSTYPE" == "cygwin" ]]; then
             # POSIX compatibility layer and Linux environment emulation for Windows
