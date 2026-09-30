@@ -27,7 +27,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term ghostty
+set $term kitty
 
 # Your preferred application launcher
 set $menu rofi -show combi -combi-modes drun#run#window#ssh -modes combi
@@ -36,7 +36,7 @@ set $menu rofi -show combi -combi-modes drun#run#window#ssh -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/david/Pictures/026a22a06e0bd53cb99d862d983b7743.gif fill
+# output * bg /home/david/Pictures/026a22a06e0bd53cb99d862d983b7743.gif fill
 
 # for hdmi need to set env WLR_RENDERER=vulkan in /etc/environment
 # HDR will be enabled in version 1.12. Can be installed via sway-git on AUR if impatient
@@ -44,7 +44,7 @@ output HDMI-A-1 {
     mode 3840x2160@120.000Hz
     render_bit_depth 10
     adaptive_sync off
-    hdr on
+    hdr off
 }
 # HDR Mapping
 bindsym $mod+Shift+z exec swaymsg output HDMI-A-1 hdr toggle
@@ -276,7 +276,7 @@ bar {
 
 
 # pick random bg from img dir
-output * bg $(find ~/.config/sway/img/ -type f | sort -R | head -1) fill
+output * background $(find ~/.config/sway/img/ -type f | sort -R | head -1) fill
 
 # handle audio osd
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
