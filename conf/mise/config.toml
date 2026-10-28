@@ -14,10 +14,24 @@ fd = "latest"
 [settings]
 minimum_release_age = "2d"
 not_found_auto_install = false
+status.show_tools = true
+status.show_env = true
 
 # all tasks here should start with "_" for easier sorting of global tasks in `mise run`
 [tasks._start_tmux]
-description = "Launch tmux with my work windows"
+description = "Launch tmux with coding and notes work windows"
 run = [
     "~/.config/tmux/tmux-work.sh"
+]
+
+[tasks._join_code]
+description = "Joins tmux coding session"
+run = [
+    "tmux attach-session -t c0d3z"
+]
+
+[tasks._join_notes]
+description = "Joins tmux notes session"
+run = [
+    "tmux attach-session -t n0t3z"
 ]

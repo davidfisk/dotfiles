@@ -1,5 +1,6 @@
-eval "$(mise activate)"
-source /usr/share/cachyos-fish-config/cachyos-config.fish
+# eval "$(mise activate)"
+# source /usr/share/cachyos-fish-config/cachyos-config.fish
+fastfetch
 
 # overwrite greeting
 # potentially disabling fastfetch
