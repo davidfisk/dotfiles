@@ -3,20 +3,8 @@ local config = {
     'jdtls',
     '--jvm-arg=' .. string.format('-javaagent:%s', vim.fn.expand '$MASON/share/jdtls/lombok.jar'),
   },
-  root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw', 'pom.xml' }, { upward = true })[1]),
+  root_dir = vim.fs.root(0, { 'gradlew', '.git', 'mvnw', 'pom.xml' }),
   settings = {
-    runtimes = {
-      -- determine runtime path on mac jenv with `jenv which 24`
-      -- TODO: update to MISE
-      {
-        name = 'jdk17',
-        path = '$HOME/.jenv/versions/17.0/bin/java',
-      },
-      {
-        name = 'jdk24',
-        path = '$HOME/.jenv/versions/24/bin/java',
-      },
-    },
     java = {
       format = {
         enabled = true, -- NOTE: autoformat java

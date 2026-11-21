@@ -126,6 +126,6 @@ for type, icon in pairs(signs) do
 end
 
 vim.lsp.codelens.enable(true)
-vim.lsp.semantic_tokens.enable(true)
+-- vim.lsp.semantic_tokens.enable(true)
 
 vim.opt.autoread = true

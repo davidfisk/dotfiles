@@ -7,6 +7,7 @@ vim.pack.add {
   'https://github.com/MeanderingProgrammer/render-markdown.nvim',
   'https://github.com/jmbuhr/otter.nvim',
   'https://github.com/folke/todo-comments.nvim',
+  'https://github.com/danymat/neogen',
 }
 -- NOTE: ez configs
 require('colorful-winsep').setup()
@@ -14,6 +15,7 @@ require('colorizer').setup()
 require('render-markdown').setup()
 require('otter').setup()
 require('todo-comments').setup { signs = true }
+require('neogen').setup { snippet_engine = 'blink' } -- possible values 'luasnip, snippy, vsnip, nvim, mini'
 
 require('nvim-treesitter').install { 'cpp', 'javascript', 'java', 'markdown', 'bash' }
 
@@ -27,7 +29,8 @@ require 'dfisk.pack.conform'
 require 'dfisk.pack.nvim-tmux-navigation'
 require 'dfisk.pack.barbar'
 require 'dfisk.pack.noice'
-require 'dfisk.pack.everforest'
+-- require 'dfisk.pack.everforest'
+require 'dfisk.pack.kanagawa'
 require 'dfisk.pack.which-key'
 require 'dfisk.pack.gitgraph'
 require 'dfisk.pack.trouble'
